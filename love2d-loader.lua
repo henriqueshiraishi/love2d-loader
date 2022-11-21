@@ -97,6 +97,14 @@ function Loader:resetAndAdd(reset, scene)
   self:add(scene)
 end
 
+function Loader:reload()
+  local scenes = self.scenes
+  self:purgeAll()
+  for _, scene in ipairs(scenes) do
+    self:add(scene)
+  end
+end
+
 --                             --
 -- Freeze and Unfreeze a Scene --
 --                             --
